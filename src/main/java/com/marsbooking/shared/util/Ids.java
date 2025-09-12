@@ -1,1 +1,1 @@
-package main.java.com.marsbooking.shared.util;
+package com.marsbooking.shared.util;

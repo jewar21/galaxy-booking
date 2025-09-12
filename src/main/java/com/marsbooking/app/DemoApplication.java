@@ -1,4 +1,4 @@
-package main.java.com.marsbooking.app;
+package com.marsbooking.app;
 
 public class DemoApplication {
 

@@ -1,1 +1,1 @@
-package main.java.com.marsbooking.domain.Passenger;
+package com.marsbooking.domain.passenger;

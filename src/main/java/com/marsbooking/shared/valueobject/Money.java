@@ -1,1 +1,1 @@
-package main.java.com.marsbooking.shared.valueobject;
+package com.marsbooking.shared.valueobject;

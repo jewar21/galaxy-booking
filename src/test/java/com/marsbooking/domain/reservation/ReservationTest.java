@@ -1,1 +1,1 @@
-package test.java.com.marsbooking.domain.reservation;
+package com.marsbooking.domain.reservation;

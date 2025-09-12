@@ -1,1 +1,1 @@
-package test.java.com.marsbooking.app;
+package com.marsbooking.app;

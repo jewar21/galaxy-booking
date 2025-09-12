@@ -1,1 +1,1 @@
-package test.java.com.marsbooking.domain.passenger;
+package com.marsbooking.domain.passenger;
