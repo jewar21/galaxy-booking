@@ -1,14 +1,16 @@
 package com.marsbooking.domain.crew;
 
-public class CrewMember {
+public class Crew {
+    
+public class crewMember {
     private String id;
     private String name;
     private String role;
     private String rank;
     private int experienceYears;
     private boolean onDuty;
-    
-    public CrewMember(String id, String name, String role, String rank, int experienceYears, boolean onDuty) {
+
+    public crewMember(String id, String name, String role, String rank, int experienceYears, boolean onDuty) {
         this.id = id;
         this.name = name;
         this.role = role;
@@ -16,7 +18,7 @@ public class CrewMember {
         this.experienceYears = experienceYears;
         this.onDuty = onDuty;
     }
-    
+
     // Getters & Setters
     public String getId() { return id; }
     public String getName() { return name; }
@@ -24,16 +26,29 @@ public class CrewMember {
     public String getRank() { return rank; }
     public int getExperienceYears() { return experienceYears; }
     public boolean isOnDuty() { return onDuty; }
+
     public void setName(String name) { this.name = name; }
     public void setRole(String role) { this.role = role; }
     public void setRank(String rank) { this.rank = rank; }
     public void setExperienceYears(int experienceYears) { this.experienceYears = experienceYears; }
     public void setOnDuty(boolean onDuty) { this.onDuty = onDuty; }
 
+    @Override
+    public String toString() {
+        return "CrewMember :" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                ", rank='" + rank + '\'' +
+                ", experienceYears=" + experienceYears +
+                ", onDuty=" + onDuty +
+                ':';
+    }
+
     public boolean isVeteran() {
         return experienceYears >= 10;
     }
-
+    
     public boolean isJunior() {
         return experienceYears < 3;
     }
@@ -57,7 +72,7 @@ public class CrewMember {
             this.experienceYears += years;
         }
     }
-
+    
     public boolean canAssignToCriticalMission() {
         return onDuty && experienceYears >= 5;
     }
@@ -75,13 +90,13 @@ public class CrewMember {
                            name, id, role, rank, experienceYears, 
                            onDuty ? "En servicio" : "Fuera de servicio");
     }
-    
-    public boolean canTrain(CrewMember trainee) {
+
+    public boolean canTrain(crewMember trainee) {
         return this.isVeteran() && this.onDuty && 
                trainee.isJunior() && !trainee.equals(this);
     }
 
-    public int compareByExperience(CrewMember other) {
+    public int compareByExperience(crewMember other) {
         return Integer.compare(this.experienceYears, other.experienceYears);
     }
 
@@ -89,24 +104,14 @@ public class CrewMember {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        CrewMember that = (CrewMember) obj;
+        crewMember that = (crewMember) obj;
         return id != null ? id.equals(that.id) : that.id == null;
     }
-
+    
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
-    
-    @Override
-    public String toString() {
-        return "CrewMember :" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
-                ", rank='" + rank + '\'' +
-                ", experienceYears=" + experienceYears +
-                ", onDuty=" + onDuty +
-                ':';
-    }
+}
+
 }
