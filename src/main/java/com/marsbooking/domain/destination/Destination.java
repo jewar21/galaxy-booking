@@ -1,1 +1,0 @@
-package com.marsbooking.domain.destination;
