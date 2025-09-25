@@ -5,6 +5,7 @@ public class Crew {
 public class crewMember {
     private String id;
     private String name;
+
     private String role;
     private String rank;
     private int experienceYears;
@@ -18,7 +19,7 @@ public class crewMember {
         this.experienceYears = experienceYears;
         this.onDuty = onDuty;
     }
-
+    
     // Getters & Setters
     public String getId() { return id; }
     public String getName() { return name; }
